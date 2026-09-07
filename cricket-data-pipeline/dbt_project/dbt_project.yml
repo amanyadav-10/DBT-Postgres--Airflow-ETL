@@ -1,0 +1,27 @@
+name: 'cricket_analytics'
+version: '1.0.0'
+config-version: 2
+
+profile: 'cricket_analytics'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  cricket_analytics:
+    staging:
+      +materialized: view
+      +schema: staging
+    marts:
+      +materialized: table
+      +schema: marts
+
+seeds:
+  cricket_analytics:
+    +schema: raw

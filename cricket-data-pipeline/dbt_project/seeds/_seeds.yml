@@ -1,0 +1,14 @@
+version: 2
+
+# These aliases make `dbt seed` load the sample CSVs into tables named
+# `matches` and `deliveries` (inside the `raw` schema, per dbt_project.yml),
+# matching exactly what the real ingestion pipeline would create - so the
+# staging models and tests work identically whether the data came from the
+# real Cricsheet pipeline or these CI sample seeds.
+seeds:
+  - name: sample_matches
+    config:
+      alias: matches
+  - name: sample_deliveries
+    config:
+      alias: deliveries

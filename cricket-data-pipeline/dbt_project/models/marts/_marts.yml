@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: dim_matches
+    description: One row per match.
+    columns:
+      - name: match_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_players
+    description: One row per unique player.
+    columns:
+      - name: player_id
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_deliveries
+    description: One row per ball bowled - the core fact table.
+    columns:
+      - name: delivery_id
+        tests:
+          - unique
+          - not_null
+      - name: match_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_matches')
+                field: match_id
+
+  - name: mart_batting_stats
+    description: Per-player, per-season batting statistics.
+    columns:
+      - name: batter_id
+        tests:
+          - not_null
+
+  - name: mart_bowling_stats
+    description: Per-player, per-season bowling statistics.
+    columns:
+      - name: bowler_id
+        tests:
+          - not_null

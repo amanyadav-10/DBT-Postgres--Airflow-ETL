@@ -1,0 +1,13 @@
+match_id,innings_num,batting_team,over_num,ball_num,batter,bowler,non_striker,runs_batter,runs_extras,runs_total,player_out,wicket_kind
+m001,1,Mumbai Falcons,0,1,R Sharma,J Bumrah,S Yadav,1,0,1,,
+m001,1,Mumbai Falcons,0,2,S Yadav,J Bumrah,R Sharma,4,0,4,,
+m001,1,Mumbai Falcons,0,3,S Yadav,J Bumrah,R Sharma,0,0,0,S Yadav,bowled
+m001,1,Mumbai Falcons,1,1,V Kohli,R Ashwin,R Sharma,6,0,6,,
+m001,1,Mumbai Falcons,1,2,V Kohli,R Ashwin,R Sharma,1,0,1,,
+m001,2,Chennai Kings,0,1,MS Dhoni,J Bumrah,R Jadeja,2,0,2,,
+m001,2,Chennai Kings,0,2,MS Dhoni,J Bumrah,R Jadeja,0,1,1,,
+m002,1,Delhi Capitals XI,0,1,R Pant,Y Chahal,A Rahane,4,0,4,,
+m002,1,Delhi Capitals XI,0,2,R Pant,Y Chahal,A Rahane,0,0,0,R Pant,caught
+m002,1,Delhi Capitals XI,0,3,A Rahane,Y Chahal,S Iyer,1,0,1,,
+m002,2,Bangalore Strikers,0,1,F du Plessis,R Ashwin,V Kohli,2,0,2,,
+m002,2,Bangalore Strikers,0,2,V Kohli,R Ashwin,F du Plessis,1,0,1,,

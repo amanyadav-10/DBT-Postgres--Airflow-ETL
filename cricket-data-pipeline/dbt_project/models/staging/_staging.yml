@@ -1,0 +1,39 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: matches
+        description: One row per match, loaded from Cricsheet JSON.
+      - name: deliveries
+        description: One row per ball bowled, loaded from Cricsheet JSON.
+
+models:
+  - name: stg_matches
+    description: Cleaned view over raw match metadata.
+    columns:
+      - name: match_id
+        description: Unique identifier for a match (Cricsheet match ID).
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_deliveries
+    description: Cleaned view over raw ball-by-ball delivery data.
+    columns:
+      - name: delivery_id
+        description: Surrogate key uniquely identifying one ball bowled.
+        tests:
+          - unique
+          - not_null
+      - name: match_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_matches')
+                field: match_id
+      - name: runs_total
+        tests:
+          - not_null
